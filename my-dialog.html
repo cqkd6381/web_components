@@ -1,0 +1,24 @@
+<div id="profileTemplate">
+	<style>
+		.doc{
+			color:red;
+		}
+	</style>
+  	<div class="profile">
+	    <img src="profile.png" class="profile__img">
+	    <div class="doc">importDoc</div>
+  	</div>
+  	<script>
+  		// 以下代码位于被加载（import）的外部网页
+
+		// importDoc指向被加载的DOM
+		var importDoc = document.currentScript.ownerDocument;
+
+		// mainDoc指向主文档的DOM
+		var mainDoc = document;
+
+		// 将子页面的样式表添加主文档
+		var styles = importDoc.querySelector('style');
+		mainDoc.head.appendChild(styles.cloneNode(true));
+  	</script>
+</div>

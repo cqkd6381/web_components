@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>import content</title>
+</head>
+<body>
+	<template id="profileTemplate">
+	  	<div class="profile">
+		    <img src="" class="profile__img">
+		    <div class="profile__name"></div>
+		    <div class="profile__social"></div>
+	  	</div>
+	</template>
+	<script type="text/javascript">
+		var template = document.querySelector('#profileTemplate');
+		template.content.querySelector('.profile__img').src = 'profile.png';
+		template.content.querySelector('.profile__name').textContent = 'Barack Obama';
+		template.content.querySelector('.profile__social').textContent = 'Follow me on Twitter';
+		document.body.appendChild(template.content);
+	</script>
+</body>
+</html>

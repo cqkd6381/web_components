@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HTML Import</title>
+	<link rel="import" href="my-dialog.html">
+</head>
+<body>
+	<div class="doc">mainDoc</div>
+	<script>
+		function supportsImports() {
+		  return 'import' in document.createElement('link');
+		}
+
+		if (supportsImports()) {
+		  // 支持
+		  console.log('支持');
+		} else {
+		  // 不支持
+		  console.log('不支持');
+		}
+		var content = document.querySelector('link[rel="import"]').import;
+		console.log(content)
+		var el = content.querySelector('#profileTemplate');
+		document.body.appendChild(el.cloneNode(true));
+	</script>
+</body>
+</html>

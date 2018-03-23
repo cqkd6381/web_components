@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Shadow DOM</title>
+</head>
+<body>
+	<div id="demo">demo</div>
+	<script>
+		var shadowRoot = document.querySelector('#demo').createShadowRoot();
+		shadowRoot.textContent = '你好';
+		shadowRoot.innerHTML = '<p>Here is some new text</p>';
+		shadowRoot.innerHTML += '<style>p { color: red };</style>';
+	</script>
+</body>
+</html>

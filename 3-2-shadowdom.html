@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<div id="nameTag">张三</div>
+
+	<template id="nameTagTemplate">
+	  	<style>
+		    .outer {
+		      	border: 2px solid brown;
+		    }
+	  	</style>
+
+	  	<div class="outer">
+		    <div class="boilerplate">
+		      	Hi! My name is
+		    </div>
+		    <div class="name">
+		      	Bob
+		    </div>
+	  	</div>
+	</template>
+	<script type="text/javascript">
+		var shadow = document.querySelector('#nameTag').createShadowRoot();
+		var template = document.querySelector('#nameTagTemplate');
+		shadow.appendChild(template.content.cloneNode(true));
+	</script>
+</body>
+</html>
